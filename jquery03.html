@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+
+        .mondiv {
+            width: 400px; height: 200px; border: 1px solid black;
+        }
+
+        img {
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <button id="btn1">ok</button>
+    <button>ajoute une ligne</button>
+    <section>
+        <div class="c1" id="id1">du texte 1</div>
+        <div class="c1" id="id2">du texte 2</div>
+        <div class="c1" id="id3">du texte 3</div>
+    </section>
+
+    <div>
+        <img id="im1" />
+        <a>google.fr</a>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#btn1").click(function() {
+            $("#im1").attr("src","https://64.media.tumblr.com/a58bdf6adb40f519546e18780a3db11c/4c10f74a365442d3-6d/s1280x1920/c8e7fb33af7a6fa2a969963c1e14aa3e7a027aad.jpg")
+             });
+
+             $("section").on("click",".c1", function () {
+
+                console.log($(this).attr("id"))
+             })
+
+             $("button").click(function () {
+                $("section").append('<div class="c1" id="id4"> du texte 4</div>')
+             })
+            });
+
+
+
+
+    </script>
+    
+</body>
+</html>

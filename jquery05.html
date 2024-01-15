@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+
+        #mondiv {
+            width: 400px; height: 200px; border: 1px solid black;
+        }
+
+        #p1 {
+            width: 300px; height: 100px; border: 1px solid black;
+        }
+
+        img {
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="mondiv">un paragraphe</div>
+<p id="p1">another paragraphe</p>
+
+
+    <script>
+
+//ajout d'events multiples sur une fonction (changement de couleurs)
+
+        $(document).ready(function () {
+
+            $("#mondiv").on({
+                mouseover: function(event) {
+                $(this).css("background-color", "yellow")
+            },
+            mouseout: function(event) {
+                $(this).css("background-color", "#FF4500")
+            },
+            click: function(event) {
+                $(this).css("background-color", "cyan")
+            },
+            })
+
+            $("#p1").on("mouseover mouseon", function() {
+                console.log("la souris me chatouille hihihi"),
+                $("#p1").append('<div class="c1" id="id4"> Arreeeeeete, la souris me chatouille hihihi</div>')
+             })
+
+        });
+
+      
+
+    </script>
+    
+</body>
+</html>

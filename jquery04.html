@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+
+        .mondiv {
+            width: 400px; height: 200px; border: 1px solid black;
+        }
+
+        img {
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>un paragraphe</p>
+    <p>un autre para</p>
+    <button>un</button>
+    <button id="b2">deux</button>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("p").on("monSuperEvent", function (e,par1,par2){
+                console.log($(this).text() + ": " + par1 + ": " + par2);
+                })
+
+            $("#b2").click(function() {
+                $("p").trigger("monSuperEvent",["page3","page4"])
+            })
+
+            });
+
+
+
+
+    </script>
+    
+</body>
+</html>
